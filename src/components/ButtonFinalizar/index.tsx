@@ -1,17 +1,18 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-import { Link } from 'react-router-dom'
 
 const ButtonComponent = styled.div`
-  display: inline-block;
-  background-color: ${cores.rosa};
+  display: block;
+  background-color: ${cores.creme};
+  text-align: center;
+  width: 100%;
   font-size: 14px;
   font-weight: bold;
   padding: 6px;
-  
+
   a {
     text-decoration: none;
-    color: ${cores.creme};
+    color: ${cores.rosa};
   }
 
   &:hover {
@@ -19,13 +20,13 @@ const ButtonComponent = styled.div`
   }
 `
 
-function ButtonTag() {
+function ButtonFinalizar() {
   return (
     <ButtonComponent>
-      <Link to="restaurante">
-        <h3>Saiba Mais</h3>
-      </Link>
+      <a href="#">
+        <h3>Adicionar Carrinho</h3>
+      </a>
     </ButtonComponent>
   )
 }
-export default ButtonTag
+export default ButtonFinalizar

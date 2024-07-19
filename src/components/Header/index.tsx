@@ -2,15 +2,19 @@ import styled from 'styled-components'
 import bkg_image from '../../assets/images/Vector_cabecalho.svg'
 import logo from '../../assets/images/logo_efood.png'
 
-const HeaderBar = styled.header`
+type PropsHeader = {
+  tipo_header: 'grande' | 'pequeno'
+}
+
+const HeaderBar = styled.header<PropsHeader>`
   background-image: url(${bkg_image});
   background-color: black;
   display: flex;
   align-items: center;
   flex-direction: column;
-  height: 300px;
+  /* height: 300px; */
+  height: ${(props) => (props.tipo_header === 'grande' ? '300px' : '175px')};
   width: 100%;
-  margin-bottom: 60px; 
 `
 
 const LogoHeader = styled.img`
@@ -26,13 +30,17 @@ const TituloHeader = styled.h2`
   margin-top: 60px;
 `
 
-function Header() {
+function Header({ tipo_header }: PropsHeader) {
   return (
-    <HeaderBar>
+    <HeaderBar tipo_header={tipo_header}>
       <LogoHeader src={logo} alt="logo efood" />
-      <TituloHeader>
-        Viva experiências gastronômicas no conforto da sua casa
-      </TituloHeader>
+      {tipo_header === 'grande' ? (
+        <TituloHeader>
+          Viva experiências gastronômicas no conforto da sua casa
+        </TituloHeader>
+      ) : (
+        ''
+      )}
     </HeaderBar>
   )
 }

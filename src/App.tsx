@@ -1,18 +1,16 @@
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Restaurantes from './components/Restaurantes'
+import { BrowserRouter } from 'react-router-dom'
+
 import { Container, GlobalCss } from './styles'
+import Rotas from './routes'
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <GlobalCss />
       <Container>
-        <Header />
-        <Restaurantes/>
-        <Footer />
+        <Rotas />
       </Container>
-    </>
+    </BrowserRouter>
   )
 }
 

@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Card from '../Card'
+import CardRestaurante from '../CardRestaurante'
 
 const ListRestaurantes = styled.div`
     display: grid;
@@ -8,18 +8,18 @@ const ListRestaurantes = styled.div`
     justify-content: center;
     gap: 60px;
     grid-template-columns: 480px 480px;
-    margin-bottom: 60px
+    margin: 60px auto;
 `
 
 function Restaurantes() {
   return (
     <ListRestaurantes>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
-        <Card/>
+        <CardRestaurante/>
+        <CardRestaurante/>
+        <CardRestaurante/>
+        <CardRestaurante/>
+        <CardRestaurante/>
+        <CardRestaurante/>
     </ListRestaurantes>
   )
 }

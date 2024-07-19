@@ -8,6 +8,7 @@ const CardContainer = styled.div`
   height: 420px;
   background-color: ${cores.branco};
   position: relative;
+  border: 1px solid ${cores.rosa}
 `
 const CardImage = styled.img`
   width: 100%;
@@ -30,7 +31,7 @@ const CardText = styled.p`
   line-height: 22px;
 `
 
-function Card() {
+function CardRestaurante() {
   return (
     <CardContainer>
       <CardImage src={foto} alt="imagem restaurante" />
@@ -48,4 +49,4 @@ function Card() {
   )
 }
 
-export default Card
+export default CardRestaurante
