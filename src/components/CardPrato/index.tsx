@@ -9,6 +9,7 @@ const CardContainer = styled.div`
   background-color: ${cores.rosa};
   padding: 10px;
   position: relative;
+  cursor: pointer;
 `
 const CardImage = styled.img`
   width: 100%;
@@ -16,6 +17,11 @@ const CardImage = styled.img`
   object-fit: cover;
   top: 0;
   left: 0;
+
+  &:hover {
+    scale: 1.01;
+    transition: 0.1s ease-in;
+  }
 `
 const CardTitle = styled.h3`
   font-size: 18px;

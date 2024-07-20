@@ -11,6 +11,7 @@ const ListRestaurantes = styled.div`
     margin: 60px auto;
 `
 
+
 function Pratos() {
   return (
     <ListRestaurantes>
