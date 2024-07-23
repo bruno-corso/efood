@@ -7,30 +7,14 @@ import { AppDispatch, RootState } from '../../store'
 import { fetchItensRestaurantes } from '../../features/getItensSlice'
 
 function Home() {
-  // const [restaurantesList, setRestaurantesList] = useState([])
-
-  // async function buscaDados(endpoint: string) {
-  //   const response = await axios.get(endpoint)
-  //   console.log('STATUS')
-  //   console.log(response.status)
-  //   console.log('DATA')
-  //   console.log(response.data)
-  //   setRestaurantesList(response.data)
-  // }
-
-  // useEffect(() => {
-  //   buscaDados('https://fake-api-tau.vercel.app/api/efood/restaurantes')
-  // }, [])
 
   const dispatch = useDispatch<AppDispatch>();
   const statusBuscaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.status)
   const errorBuscaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.error)
 
   useEffect(() => {
-    if (statusBuscaRestaurantes === 'idle') {
       dispatch(fetchItensRestaurantes())
-    }
-  }, [statusBuscaRestaurantes, dispatch])
+  }, [])
 
   return (
     <>

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
-import foto from '../../assets/images/imagem_pizza.png'
 import ButtonFinalizar from '../ButtonFinalizar'
+import Prato from '../../models/Prato/indes'
 
 const CardContainer = styled.div`
   width: 320px;
@@ -40,16 +40,14 @@ const CardText = styled.p`
   line-height: 22px;
 `
 
-function CardPrato() {
+function CardPrato({descricao, foto, nome}: Prato) {
+
   return (
     <CardContainer>
       <div style={{ height: '325px' }}>
         <CardImage src={foto} alt="imagem restaurante" />
-        <CardTitle style={{ left: 16 }}>Restaurante de Sushi</CardTitle>
-        <CardText>
-          A clássica Marguerita: molho de tomate suculento, mussarela derretida,
-          manjericão fresco e um toque de azeite. Sabor e simplicidade!
-        </CardText>
+        <CardTitle style={{ left: 16 }}>{nome}</CardTitle>
+        <CardText>{descricao.substring(0,150)+'...'}</CardText>
       </div>
       <ButtonFinalizar />
     </CardContainer>

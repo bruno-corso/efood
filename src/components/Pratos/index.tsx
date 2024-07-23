@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import CardPrato from '../CardPrato'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 const ListRestaurantes = styled.div`
     display: grid;
@@ -13,14 +15,23 @@ const ListRestaurantes = styled.div`
 
 
 function Pratos() {
+
+  const restauranteSelecionado = useSelector((state: RootState) => state.buscaItensApi.itens)
+  const pratosSelecionados = restauranteSelecionado[0].cardapio
+
   return (
     <ListRestaurantes>
-        <CardPrato/>
-        <CardPrato/>
-        <CardPrato/>
-        <CardPrato/>
-        <CardPrato/>
-        <CardPrato/>
+      {pratosSelecionados.map((prato) =>
+        <CardPrato 
+          key={prato.id} 
+          descricao={prato.descricao}
+          foto={prato.foto}
+          nome={prato.nome}
+          porcao={prato.porcao}
+          preco={prato.preco}
+          id={prato.id}
+        />
+      )}
     </ListRestaurantes>
   )
 }

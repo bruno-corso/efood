@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
 import ButtonTag from '../Button'
+import { escolherRestaurante } from '../../features/getItensSlice'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../store'
 
 const CardContainer = styled.div`
   width: 480px;
@@ -36,6 +39,7 @@ type Props = {
   avaliacao: string
   descricao: string
   capa: string
+  id: number
 }
 
 function CardRestaurante({
@@ -43,14 +47,18 @@ function CardRestaurante({
   capa,
   descricao,
   titulo,
+  id
 }: Props) {
+
+  const dispatch = useDispatch<AppDispatch>()
+
   return (
     <CardContainer>
       <CardImage src={capa} alt="imagem restaurante" />
       <CardTitle style={{ left: 16 }}>{titulo.toUpperCase()}</CardTitle>
       <CardTitle style={{ right: 16 }}>{avaliacao} ✯</CardTitle>
       <CardText>{descricao}</CardText>
-      <div style={{ position: 'absolute', bottom: 16, left: 16 }}>
+      <div onClick={() => dispatch(escolherRestaurante(id))} style={{ position: 'absolute', bottom: 16, left: 16 }}>
         <ButtonTag />
       </div>
     </CardContainer>

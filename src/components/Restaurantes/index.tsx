@@ -1,9 +1,7 @@
 import styled from 'styled-components'
 import CardRestaurante from '../CardRestaurante'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, RootState } from '../../store'
-import { fetchItensRestaurantes } from '../../features/getItensSlice'
-import { useEffect } from 'react'
+import {  useSelector } from 'react-redux'
+import {  RootState } from '../../store'
 
 const ListRestaurantes = styled.div`
   display: grid;
@@ -17,16 +15,9 @@ const ListRestaurantes = styled.div`
 
 function Restaurantes() {
 
-  const dispatch = useDispatch<AppDispatch>();
   const listaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.itens)
   const statusBuscaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.status)
   const errorBuscaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.error)
-
-  useEffect(() => {
-    if (statusBuscaRestaurantes === 'idle') {
-      dispatch(fetchItensRestaurantes())
-    }
-  }, [statusBuscaRestaurantes, dispatch])
 
   return (
     <>
@@ -42,11 +33,12 @@ function Restaurantes() {
         <ListRestaurantes>
           {listaRestaurantes.map((restaurante) => (
             <CardRestaurante
+              key={restaurante.id}
               avaliacao={restaurante.avaliacao}
               capa={restaurante.capa}
               descricao={restaurante.descricao}
               titulo={restaurante.tipo}
-              key={restaurante.id}
+              id={restaurante.id}
             />
           ))}
         </ListRestaurantes>

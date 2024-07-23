@@ -23,7 +23,12 @@ export const fetchItensRestaurantes: AsyncThunk<Restaurante[], void, { dispatch:
 const itensSlice = createSlice({
     name: 'itens',
     initialState,
-    reducers: {},
+    reducers: {
+        escolherRestaurante(state, action: PayloadAction<number>){
+            state.itens = state.itens.filter((restaurante) => (restaurante.id) === action.payload)
+            console.log("Restaturante Selecionado: ",JSON.parse(JSON.stringify(state.itens[0])));
+        }
+    },
     extraReducers: (builder) => {
         builder
             .addCase(fetchItensRestaurantes.pending, (state) =>{
@@ -40,4 +45,6 @@ const itensSlice = createSlice({
     },
 })
 
+
+export const { escolherRestaurante } = itensSlice.actions
 export default itensSlice.reducer
