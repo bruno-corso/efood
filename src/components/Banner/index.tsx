@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 
-import foto from '../../assets/images/imagem_rest2.jpg'
 import { ContainerMd, cores } from '../../styles'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 const BannerComponent = styled.div`
   width: 100%;
@@ -37,14 +38,16 @@ const BannerComponent = styled.div`
     z-index: 1;
   }
 `
-
 function Banner() {
+
+  const restauranteSelecionado = useSelector((state: RootState) => state.buscaItensApi.itens[0])
+
   return (
     <BannerComponent>
-        <img src={foto} alt="foto restaurante" />
+        <img src={restauranteSelecionado.capa} alt="foto restaurante" />
       <ContainerMd>
-        <h5>Italiana</h5>
-        <h4>Restaurante</h4>
+        <h5>{restauranteSelecionado.tipo}</h5>
+        <h4>{restauranteSelecionado.titulo}</h4>
       </ContainerMd>
     </BannerComponent>
   )
