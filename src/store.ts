@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import contadorReducer from "./features/counterSlice";
+import getItensReducer from "./features/getItensSlice";
 
 const store = configureStore({
     reducer: {
         contadorDeValor: contadorReducer,
+        buscaItensApi: getItensReducer,
     },
 });
 
