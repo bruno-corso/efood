@@ -1,5 +1,5 @@
 import { AsyncThunk, createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Restaurante from "../Models/Restaurante"
+import Restaurante from "../models/Restaurante"
 import axios from "axios";
 import { AppDispatch } from "../store";
 

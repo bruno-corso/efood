@@ -23,7 +23,6 @@ function Home() {
   // }, [])
 
   const dispatch = useDispatch<AppDispatch>();
-  const listaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.itens)
   const statusBuscaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.status)
   const errorBuscaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.error)
 
@@ -45,7 +44,7 @@ function Home() {
       </>
         }
       {statusBuscaRestaurantes === 'succeeded' &&
-        <Restaurantes lista_restaurantes={listaRestaurantes} />}
+        <Restaurantes />}
       <Footer />
     </>
   )
