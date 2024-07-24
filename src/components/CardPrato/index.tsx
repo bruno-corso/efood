@@ -48,7 +48,7 @@ function CardPrato({ descricao, foto, nome }: Prato) {
         <CardTitle style={{ left: 16 }}>{nome}</CardTitle>
         <CardText>{descricao.substring(0, 150) + '...'}</CardText>
       </div>
-      <ButtonFinalizar />
+      <ButtonFinalizar texto='Ver Mais'/>
     </CardContainer>
   )
 }

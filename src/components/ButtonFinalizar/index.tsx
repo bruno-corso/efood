@@ -20,11 +20,15 @@ const ButtonComponent = styled.div`
   }
 `
 
-function ButtonFinalizar() {
+type Props = {
+  texto: string
+}
+
+function ButtonFinalizar({texto}: Props) {
   return (
     <ButtonComponent>
       <a href="#">
-        <h3>Adicionar Carrinho</h3>
+        <h3>{texto}</h3>
       </a>
     </ButtonComponent>
   )
