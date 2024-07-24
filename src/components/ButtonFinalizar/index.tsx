@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 import { cores } from '../../styles'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../store'
+import { toogleModal } from '../../features/modalSlice'
 
 const ButtonComponent = styled.div`
   display: block;
@@ -24,10 +27,12 @@ type Props = {
   texto: string
 }
 
-function ButtonFinalizar({texto}: Props) {
+function ButtonFinalizar({ texto }: Props) {
+  const dispach = useDispatch<AppDispatch>()
+
   return (
-    <ButtonComponent>
-      <a href="#">
+    <ButtonComponent onClick={() => dispach(toogleModal()) }>
+      <a href='#'>
         <h3>{texto}</h3>
       </a>
     </ButtonComponent>
