@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import CardRestaurante from '../CardRestaurante'
-import {  useSelector } from 'react-redux'
-import {  RootState } from '../../store'
+import { useSelector } from 'react-redux'
+import { RootState } from '../../store'
 
 const ListRestaurantes = styled.div`
   display: grid;
@@ -14,22 +14,26 @@ const ListRestaurantes = styled.div`
 `
 
 function Restaurantes() {
-
-  const listaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.itens)
-  const statusBuscaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.status)
-  const errorBuscaRestaurantes = useSelector((state: RootState) => state.buscaItensApi.error)
+  const listaRestaurantes = useSelector(
+    (state: RootState) => state.buscaItensApi.itens
+  )
+  const statusBuscaRestaurantes = useSelector(
+    (state: RootState) => state.buscaItensApi.status
+  )
+  const errorBuscaRestaurantes = useSelector(
+    (state: RootState) => state.buscaItensApi.error
+  )
 
   return (
     <>
-      {statusBuscaRestaurantes === 'loading' &&
-        <p>Loading...</p>}
-      {statusBuscaRestaurantes === 'failed' &&
+      {statusBuscaRestaurantes === 'loading' && <p>Loading...</p>}
+      {statusBuscaRestaurantes === 'failed' && (
         <>
           <p>Algo deu errado...</p>
           <p>{errorBuscaRestaurantes}</p>
         </>
-      }
-      {statusBuscaRestaurantes === 'succeeded' &&
+      )}
+      {statusBuscaRestaurantes === 'succeeded' && (
         <ListRestaurantes>
           {listaRestaurantes.map((restaurante) => (
             <CardRestaurante
@@ -42,7 +46,7 @@ function Restaurantes() {
             />
           ))}
         </ListRestaurantes>
-      }
+      )}
     </>
   )
 }

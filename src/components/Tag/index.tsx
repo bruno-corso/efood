@@ -10,11 +10,10 @@ const TagComponent = styled.div`
   padding: 6px;
 `
 
-
 function Tag() {
   return (
     <TagComponent>
-       <h3>Tag Teste</h3>
+      <h3>Tag Teste</h3>
     </TagComponent>
   )
 }

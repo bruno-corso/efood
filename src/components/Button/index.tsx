@@ -8,7 +8,7 @@ const ButtonComponent = styled.div`
   font-size: 14px;
   font-weight: bold;
   padding: 6px;
-  
+
   a {
     text-decoration: none;
     color: ${cores.creme};

@@ -8,7 +8,6 @@ import { ContainerMd } from '../../styles'
 // import { decrementar, incrementar, incrementarValor } from '../../features/counterSlice'
 
 function Restaurante() {
-
   //REDUX CONTADOR
   // const valor = useSelector((state: RootState) => state.contadorDeValor.value)
   // const dispatch = useDispatch<AppDispatch>()

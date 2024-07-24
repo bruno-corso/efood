@@ -39,12 +39,13 @@ const BannerComponent = styled.div`
   }
 `
 function Banner() {
-
-  const restauranteSelecionado = useSelector((state: RootState) => state.buscaItensApi.itens[0])
+  const restauranteSelecionado = useSelector(
+    (state: RootState) => state.buscaItensApi.itens[0]
+  )
 
   return (
     <BannerComponent>
-        <img src={restauranteSelecionado.capa} alt="foto restaurante" />
+      <img src={restauranteSelecionado.capa} alt="foto restaurante" />
       <ContainerMd>
         <h5>{restauranteSelecionado.tipo}</h5>
         <h4>{restauranteSelecionado.titulo}</h4>

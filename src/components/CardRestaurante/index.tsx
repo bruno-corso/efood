@@ -42,14 +42,7 @@ type Props = {
   id: number
 }
 
-function CardRestaurante({
-  avaliacao,
-  capa,
-  descricao,
-  titulo,
-  id
-}: Props) {
-
+function CardRestaurante({ avaliacao, capa, descricao, titulo, id }: Props) {
   const dispatch = useDispatch<AppDispatch>()
 
   return (
@@ -58,7 +51,10 @@ function CardRestaurante({
       <CardTitle style={{ left: 16 }}>{titulo.toUpperCase()}</CardTitle>
       <CardTitle style={{ right: 16 }}>{avaliacao} ✯</CardTitle>
       <CardText>{descricao}</CardText>
-      <div onClick={() => dispatch(escolherRestaurante(id))} style={{ position: 'absolute', bottom: 16, left: 16 }}>
+      <div
+        onClick={() => dispatch(escolherRestaurante(id))}
+        style={{ position: 'absolute', bottom: 16, left: 16 }}
+      >
         <ButtonTag />
       </div>
     </CardContainer>

@@ -4,26 +4,26 @@ import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
 
 const ListRestaurantes = styled.div`
-    display: grid;
-    width: 100%;
-    margin: 0 auto;
-    justify-content: center;
-    gap: 40px;
-    grid-template-columns: 320px 320px 320px ;
-    margin: 60px auto;
+  display: grid;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  gap: 40px;
+  grid-template-columns: 320px 320px 320px;
+  margin: 60px auto;
 `
 
-
 function Pratos() {
-
-  const restauranteSelecionado = useSelector((state: RootState) => state.buscaItensApi.itens)
+  const restauranteSelecionado = useSelector(
+    (state: RootState) => state.buscaItensApi.itens
+  )
   const pratosSelecionados = restauranteSelecionado[0].cardapio
 
   return (
     <ListRestaurantes>
-      {pratosSelecionados.map((prato) =>
-        <CardPrato 
-          key={prato.id} 
+      {pratosSelecionados.map((prato) => (
+        <CardPrato
+          key={prato.id}
           descricao={prato.descricao}
           foto={prato.foto}
           nome={prato.nome}
@@ -31,7 +31,7 @@ function Pratos() {
           preco={prato.preco}
           id={prato.id}
         />
-      )}
+      ))}
     </ListRestaurantes>
   )
 }

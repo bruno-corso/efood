@@ -1,5 +1,4 @@
-import Prato from "../Prato/indes"
-
+import Prato from '../Prato'
 
 class Restaurante {
   id: number

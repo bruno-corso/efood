@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import bkg_image from '../../assets/images/Vector_cabecalho.svg'
 import logo from '../../assets/images/logo_efood.png'
+import { Link } from 'react-router-dom'
 
 type PropsHeader = {
   tipo_header: 'grande' | 'pequeno'
@@ -33,7 +34,9 @@ const TituloHeader = styled.h2`
 function Header({ tipo_header }: PropsHeader) {
   return (
     <HeaderBar tipo_header={tipo_header}>
-      <LogoHeader src={logo} alt="logo efood" />
+      <Link to={'/'}>
+        <LogoHeader src={logo} alt="logo efood" />
+      </Link>
       {tipo_header === 'grande' ? (
         <TituloHeader>
           Viva experiências gastronômicas no conforto da sua casa

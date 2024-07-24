@@ -24,13 +24,13 @@ export const GlobalCss = createGlobalStyle`
 `
 
 export const Container = styled.div`
-    max-width: 1366px;
-    width: 100%;
-    margin: 0 auto;
+  max-width: 1366px;
+  width: 100%;
+  margin: 0 auto;
 `
 
 export const ContainerMd = styled.div`
-    max-width: 1024px;
-    width: 100%;
-    margin: 0 auto;
+  max-width: 1024px;
+  width: 100%;
+  margin: 0 auto;
 `
