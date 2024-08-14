@@ -32,7 +32,7 @@ function ButtonFinalizar({ texto }: Props) {
 
   return (
     <ButtonComponent onClick={() => dispach(toogleModal()) }>
-      <a href='#'>
+      <a>
         <h3>{texto}</h3>
       </a>
     </ButtonComponent>

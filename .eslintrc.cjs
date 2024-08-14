@@ -9,6 +9,8 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+
   parser: '@typescript-eslint/parser',
   plugins: ['react-refresh'],
   rules: {

@@ -19,10 +19,14 @@ const ButtonComponent = styled.div`
   }
 `
 
+function scrollTop() {
+  window.scrollTo(0,0)
+}
+
 function ButtonTag() {
   return (
     <ButtonComponent>
-      <Link to="restaurante">
+      <Link to="restaurante" onClick={() => scrollTop()}>
         <h3>Saiba Mais</h3>
       </Link>
     </ButtonComponent>

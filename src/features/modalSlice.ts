@@ -14,6 +14,7 @@ const modalSlice = createSlice({
   reducers: {
     toogleModal(state) {
       state.status = !state.status
+      // window.scrollTo(0,0)
     },
   },
 })
