@@ -30,8 +30,12 @@ type Props = {
 function ButtonFinalizar({ texto }: Props) {
   const dispach = useDispatch<AppDispatch>()
 
+  function selecionarPrato() {
+    dispach(toogleModal())
+  }
+
   return (
-    <ButtonComponent onClick={() => dispach(toogleModal()) }>
+    <ButtonComponent onClick={() => selecionarPrato()}>
       <a>
         <h3>{texto}</h3>
       </a>

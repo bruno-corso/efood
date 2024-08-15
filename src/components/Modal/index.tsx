@@ -21,7 +21,7 @@ function Modal() {
   return (
     <>
       <PratoDetalhes />
-      <ModalDiv onClick={() => dispach(toogleModal())}/>
+      <ModalDiv onClick={() => dispach(toogleModal())} />
     </>
   )
 }

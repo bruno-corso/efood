@@ -5,6 +5,7 @@ class Prato {
   nome: string
   descricao: string
   porcao: string
+  restaurante?: string
 
   constructor(
     id: number,
@@ -12,14 +13,16 @@ class Prato {
     preco: number,
     nome: string,
     descricao: string,
-    porcao: string
+    porcao: string,
+    restaurante: string
   ) {
     ;(this.id = id),
       (this.foto = foto),
       (this.preco = preco),
       (this.nome = nome),
       (this.descricao = descricao),
-      (this.porcao = porcao)
+      (this.porcao = porcao),
+      (this.restaurante = restaurante)
   }
 }
 
