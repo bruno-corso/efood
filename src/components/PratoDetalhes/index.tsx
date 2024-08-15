@@ -18,11 +18,9 @@ const ElementoPrato = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 `
-
 const ImgPrato = styled.img`
   width: 280px;
 `
-
 const ConteudoPrato = styled.div`
   width: 100%;
 `

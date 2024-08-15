@@ -2,6 +2,9 @@ import styled from 'styled-components'
 import { cores } from '../../styles'
 import ButtonFinalizar from '../ButtonFinalizar'
 import Prato from '../../models/Prato'
+import { useDispatch } from 'react-redux'
+import { AppDispatch } from '../../store'
+import { escolherPrato } from '../../features/pratoSlice'
 
 const CardContainer = styled.div`
   width: 320px;
@@ -40,15 +43,26 @@ const CardText = styled.p`
   line-height: 22px;
 `
 
-function CardPrato({ descricao, foto, nome }: Prato) {
+function CardPrato({ descricao, foto, nome, id, porcao, preco }: Prato) {
+  const dispatch = useDispatch<AppDispatch>()
+
+  const pratoSelecionado: Prato = {
+    id: id,
+    foto: foto,
+    preco: preco,
+    nome: nome,
+    descricao: descricao,
+    porcao: porcao,
+  }
+
   return (
-    <CardContainer>
+    <CardContainer onClick={() => dispatch(escolherPrato(pratoSelecionado))}>
       <div style={{ height: '325px' }}>
         <CardImage src={foto} alt="imagem restaurante" />
         <CardTitle style={{ left: 16 }}>{nome}</CardTitle>
         <CardText>{descricao.substring(0, 150) + '...'}</CardText>
       </div>
-      <ButtonFinalizar texto='Ver Mais'/>
+      <ButtonFinalizar texto="Ver Mais" />
     </CardContainer>
   )
 }

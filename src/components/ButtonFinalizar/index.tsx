@@ -24,14 +24,20 @@ const ButtonComponent = styled.div`
 `
 
 type Props = {
-  texto: string
+  texto: string,
 }
 
 function ButtonFinalizar({ texto }: Props) {
+  
   const dispach = useDispatch<AppDispatch>()
 
+  function selecionarPrato() {
+    dispach(toogleModal())
+    // dispach(escolherPrato(id))
+  }
+
   return (
-    <ButtonComponent onClick={() => dispach(toogleModal()) }>
+    <ButtonComponent onClick={() => selecionarPrato()}>
       <a>
         <h3>{texto}</h3>
       </a>
