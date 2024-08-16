@@ -24,10 +24,11 @@ const ButtonComponent = styled.div`
 `
 
 type Props = {
-  texto: string
+  texto: string,
 }
 
 function ButtonFinalizar({ texto }: Props) {
+  
   const dispach = useDispatch<AppDispatch>()
 
   function selecionarPrato() {
