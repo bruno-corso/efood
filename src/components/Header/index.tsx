@@ -64,9 +64,9 @@ function Header({ tipo_header }: PropsHeader) {
           <Link to={'/'}>
             <img src={logo} alt="logo efood" />
           </Link>
-          <span 
-          style={{ cursor: 'pointer' }}
-          onClick={() => dispach(toogleCarrinho())}
+          <span
+            style={{ cursor: 'pointer' }}
+            onClick={() => dispach(toogleCarrinho())}
           >
             {qtdCarrinho} produto(s) no carrinho
           </span>

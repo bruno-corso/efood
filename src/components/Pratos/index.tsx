@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import CardPrato from '../CardPrato'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
-import { useState } from 'react'
 
 const ListRestaurantes = styled.div`
   display: grid;
@@ -19,8 +18,6 @@ function Pratos() {
     (state: RootState) => state.buscaItensApi.itens
   )
   const pratosSelecionados = restauranteSelecionado[0].cardapio
-
-  const [pratoModal, setPratoModal] = useState(null);
 
   return (
     <ListRestaurantes>

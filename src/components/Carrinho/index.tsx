@@ -31,7 +31,7 @@ function Carrinho() {
     <>
       <CarrinhoOverlay onClick={() => dispach(toogleCarrinho())} />
       <CarrinhoContent>
-        <CarrinhoItens/>
+        <CarrinhoItens />
       </CarrinhoContent>
     </>
   )

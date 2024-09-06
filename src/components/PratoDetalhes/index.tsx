@@ -48,13 +48,13 @@ const ConteudoPrato = styled.div`
 `
 
 function PratoDetalhes() {
-  const dispach = useDispatch<AppDispatch>();
+  const dispach = useDispatch<AppDispatch>()
   const prato = useSelector((state: RootState) => state.pratoReducer)
 
   function addCarrinho(prato: Prato) {
     dispach(adicionarCarrinho(prato))
     dispach(toogleModal())
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0)
   }
 
   return (
@@ -66,7 +66,9 @@ function PratoDetalhes() {
           <p>{prato.descricao}</p>
           <p>Porção: {prato.porcao}</p>
           <p>Valor: R${prato.preco}</p>
-          <button onClick={() => addCarrinho(prato)}>Adicionar ao carrinho</button>
+          <button onClick={() => addCarrinho(prato)}>
+            Adicionar ao carrinho
+          </button>
         </ConteudoPrato>
       </ElementoPrato>
     </div>

@@ -44,7 +44,6 @@ const itensSlice = createSlice({
         JSON.parse(JSON.stringify(state.itens[0]))
       )
     },
-    
   },
   extraReducers: (builder) => {
     builder

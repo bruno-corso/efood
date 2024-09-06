@@ -46,7 +46,9 @@ const CardText = styled.p`
 function CardPrato({ descricao, foto, nome, id, porcao, preco }: Prato) {
   const dispatch = useDispatch<AppDispatch>()
 
-  const restaurante = useSelector((state: RootState) => state.buscaItensApi.itens[0].titulo)
+  const restaurante = useSelector(
+    (state: RootState) => state.buscaItensApi.itens[0].titulo
+  )
 
   const pratoSelecionado: Prato = {
     id: id,
@@ -55,7 +57,7 @@ function CardPrato({ descricao, foto, nome, id, porcao, preco }: Prato) {
     nome: nome,
     descricao: descricao,
     porcao: porcao,
-    restaurante: restaurante
+    restaurante: restaurante,
   }
 
   return (

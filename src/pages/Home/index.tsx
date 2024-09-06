@@ -17,6 +17,7 @@ function Home() {
 
   useEffect(() => {
     dispatch(fetchItensRestaurantes())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

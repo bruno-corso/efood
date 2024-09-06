@@ -18,10 +18,6 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
-    '@typescript-eslint/explicit-function-return-type': [
-      'warn',
-      { allowExpressions: true, allowConstantExport: true },
-    ],
     'prettier/prettier': ['error', { endOfLine: 'lf' }],
   },
 }

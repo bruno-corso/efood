@@ -15,7 +15,7 @@ const ListaItensContent = styled.div`
   margin: 16px;
 
   h3 {
-    color: #FFF;
+    color: #fff;
   }
 `
 const ConteudoItem = styled.div`
@@ -59,15 +59,15 @@ function CarrinhoItens() {
     (state: RootState) => state.carrinhoReducer.itens
   )
 
-  const [valorTotal, setValorTotal] = useState('');
+  const [valorTotal, setValorTotal] = useState('')
 
   useEffect(() => {
     const valores = itens_carrinho.map((item) => item.preco)
     const soma = valores.reduce((acc, e) => acc + e, 0)
-    const somaFormatado = new Intl.NumberFormat("pt-BR", {
+    const somaFormatado = new Intl.NumberFormat('pt-BR', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
-    }).format(soma);
+    }).format(soma)
     setValorTotal(somaFormatado)
   }, [itens_carrinho])
 
